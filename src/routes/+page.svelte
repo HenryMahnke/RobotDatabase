@@ -1,7 +1,18 @@
 <script>
     import { AccordionItem, Accordion } from 'flowbite-svelte';
+    import robotImage from '$lib/images/Runway 2023-08-20T04_42_08.389Z Image to Image To 2 color vector_svg type image.jpg'
+    import { Blockquote,P } from 'flowbite-svelte';
+    import { Icon } from 'flowbite-svelte-icons';
 </script>
-
+<div class="grid grid-flow-col max-h-fit">
+  <img class="m-auto" src="{robotImage}" alt="">
+  <Blockquote size="xl">
+    <Icon name="quote-solid" class="w-10 h-10 text-gray-400 dark:text-gray-600" />
+    Discover robots from past eras, find their documentation, 
+      and improve your robot with easy to access resources
+  </Blockquote>
+</div>
+  
   <Accordion>
     <AccordionItem>
       <span slot="header">What is the point</span>

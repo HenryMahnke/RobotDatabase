@@ -13,9 +13,9 @@
 	</NavBrand>
 	<NavHamburger on:click={toggle} />
 	<NavUl {activeUrl} {hidden} {activeClass} {nonActiveClass}>
-	  <NavLi href="/">Home</NavLi>
 	  <NavLi href="/Database">Database</NavLi>
 	  <NavLi href="/enterData">enterData</NavLi>
+	  <NavLi href="/Tutorials">Tutorials</NavLi>
 	  <NavLi href="/signIn">Log in</NavLi>
 	  <NavLi href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Buy Us A Coffee</NavLi>
 	</NavUl>

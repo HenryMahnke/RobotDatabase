@@ -1,6 +1,4 @@
 <script>
-	// @ts-nocheck
-
 	import { Search, Button } from 'flowbite-svelte';
 	import { Icon } from 'flowbite-svelte-icons';
 	import { CardPlaceholder } from 'flowbite-svelte';

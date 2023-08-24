@@ -17,12 +17,13 @@
     const images1 = [
       { alt: 'erbology', src: robotImage1 },
       { alt: 'shoes', src: robotImage2 },
-      { alt: 'small bag', src: robotImage3 }
+      { alt: 'small bag', src: robotImage3 },
+      { alt: 'shoe', src: robotImage6 }
+
     ];
     const images2 = [
       { alt: 'plants', src: robotImage4 },
       { alt: 'watch', src: robotImage5 },
-      { alt: 'shoe', src: robotImage6 }
     ];
     const images3 = [
       { alt: 'cream', src: robotImage7 },
@@ -31,8 +32,10 @@
     ];
     const images4 = [
       { alt: 'toiletbag', src: robotImage10 },
-      { alt: 'playstation', src: robotImage },
-      { alt: 'bag', src: robotImage2 }
+      { alt: 'small bag', src: robotImage3 },
+      { alt: 'bag', src: robotImage2 },
+      { alt: 'lamp', src: robotImage9 }
+
     ];
 </script>
 <div class="mb-10">

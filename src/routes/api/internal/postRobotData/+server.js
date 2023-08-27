@@ -28,12 +28,9 @@ export async function GET({ url }) {
       born: 1815
     });
     console.log("Document written with ID: ", docRef.id);
+    return new Response(200)
   } catch (e) {
     console.error("Error adding document: ", e);
+    return new Response(String(e))
   }
-  
-
-
-
-  return new Response(String("random"));
 }

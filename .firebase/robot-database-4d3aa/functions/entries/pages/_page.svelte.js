@@ -1,8 +1,9 @@
-import { c as create_ssr_component, a as compute_rest_props, s as setContext, v as validate_component, g as getContext, i as validate_store, j as subscribe, h as add_attribute } from "../../chunks/ssr.js";
-import { w as writable } from "../../chunks/index.js";
+import { c as create_ssr_component, a as compute_rest_props, s as setContext, v as validate_component, g as getContext, h as validate_store, i as subscribe, j as add_attribute, b as spread, d as escape_object, e as escape_attribute_value, k as each } from "../../chunks/ssr.js";
+import { w as writable } from "../../chunks/index2.js";
 import { F as Frame } from "../../chunks/Frame.js";
 import { twMerge } from "tailwind-merge";
-import "../../chunks/Indicator.svelte_svelte_type_style_lang.js";
+/* empty css                                                    */import { B as Blockquote } from "../../chunks/Blockquote.js";
+import { I as Icon } from "../../chunks/Icon.js";
 const Accordion = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let $$restProps = compute_rest_props($$props, ["multiple", "flush", "activeClass", "inactiveClass", "defaultClass"]);
   let { multiple = false } = $$props;
@@ -113,8 +114,101 @@ const AccordionItem = create_ssr_component(($$result, $$props, $$bindings, slots
   $$unsubscribe_selected();
   return `<h2 class="group"><button type="button"${add_attribute("class", buttonClass, 0)}${add_attribute("aria-expanded", open, 0)}>${slots.header ? slots.header({}) : ``} ${open ? `${slots.arrowup ? slots.arrowup({}) : ` <svg class="w-3 h-3 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"></path></svg> `}` : `${slots.arrowdown ? slots.arrowdown({}) : ` <svg class="w-3 h-3 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"></path></svg> `}`}</button></h2> ${open ? `<div><div${add_attribute("class", contentClass, 0)}>${slots.default ? slots.default({}) : ``}</div></div>` : `<div class="hidden"><div${add_attribute("class", contentClass, 0)}>${slots.default ? slots.default({}) : ``}</div></div>`} `;
 });
+const Gallery = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let divClass;
+  let $$restProps = compute_rest_props($$props, ["items", "imgClass"]);
+  let { items = [] } = $$props;
+  let { imgClass = "h-auto max-w-full rounded-lg" } = $$props;
+  if ($$props.items === void 0 && $$bindings.items && items !== void 0)
+    $$bindings.items(items);
+  if ($$props.imgClass === void 0 && $$bindings.imgClass && imgClass !== void 0)
+    $$bindings.imgClass(imgClass);
+  divClass = twMerge("grid", $$props.class);
+  return `<div${spread([escape_object($$restProps), { class: escape_attribute_value(divClass) }], {})}>${items.length ? each(items, (item) => {
+    return `${slots.default ? slots.default({ item }) : ` <div><img${add_attribute("src", item.src, 0)}${add_attribute("alt", item.alt, 0)}${add_attribute("class", twMerge(imgClass, $$props.classImg), 0)}></div> `}`;
+  }) : `${slots.default ? slots.default({ item: items[0] }) : ``}`}</div> `;
+});
+const robotImage = "/_app/immutable/assets/Runway 2023-08-20T04_42_08.389Z Image to Image To 2 color vector_svg type image.d8c00ca6.jpg";
+const robotImage2 = "/_app/immutable/assets/Robot2.74ecafd7.jpeg";
+const robotImage1 = "/_app/immutable/assets/Robot1.57189f02.jpeg";
+const robotImage4 = "/_app/immutable/assets/Robot4.4b2e1505.jpeg";
+const robotImage5 = "/_app/immutable/assets/Robot5.5c46d521.jpeg";
+const robotImage6 = "/_app/immutable/assets/Robot6.917cbf4c.jpeg";
+const robotImage7 = "/_app/immutable/assets/Robot7.825eba20.jpeg";
+const robotImage8 = "/_app/immutable/assets/Robot8.28696015.jpeg";
+const robotImage3 = "/_app/immutable/assets/Robot3.bcbe5be2.jpeg";
+const robotImage9 = "/_app/immutable/assets/Robot9.4e30bc3a.jpeg";
+const robotImage10 = "/_app/immutable/assets/Robot10.e944ca82.jpeg";
 const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  return `${validate_component(Accordion, "Accordion").$$render($$result, {}, {}, {
+  const images1 = [
+    { alt: "erbology", src: robotImage1 },
+    { alt: "shoes", src: robotImage2 },
+    { alt: "small bag", src: robotImage3 },
+    { alt: "shoe", src: robotImage6 }
+  ];
+  const images2 = [{ alt: "plants", src: robotImage4 }, { alt: "watch", src: robotImage5 }];
+  const images3 = [
+    { alt: "cream", src: robotImage7 },
+    { alt: "small bag", src: robotImage8 },
+    { alt: "lamp", src: robotImage9 }
+  ];
+  const images4 = [
+    { alt: "toiletbag", src: robotImage10 },
+    { alt: "small bag", src: robotImage3 },
+    { alt: "bag", src: robotImage2 },
+    { alt: "lamp", src: robotImage9 }
+  ];
+  return `<div class="mb-10">${validate_component(Gallery, "Gallery").$$render(
+    $$result,
+    {
+      class: "gap-4 grid-cols-2 md:grid-cols-4"
+    },
+    {},
+    {
+      default: () => {
+        return `${validate_component(Gallery, "Gallery").$$render($$result, { items: images1 }, {}, {})} ${validate_component(Gallery, "Gallery").$$render($$result, { items: images2 }, {}, {})} ${validate_component(Gallery, "Gallery").$$render($$result, { items: images3 }, {}, {})} ${validate_component(Gallery, "Gallery").$$render($$result, { items: images4 }, {}, {})}`;
+      }
+    }
+  )}</div> <div class="grid grid-flow-col max-h-fit"><img class="m-auto"${add_attribute("src", robotImage, 0)} alt=""> ${validate_component(Blockquote, "Blockquote").$$render($$result, { size: "xl" }, {}, {
+    default: () => {
+      return `${validate_component(Icon, "Icon").$$render(
+        $$result,
+        {
+          name: "quote-solid",
+          class: "w-10 h-10 text-gray-400 dark:text-gray-600"
+        },
+        {},
+        {}
+      )}
+    Discover robots`;
+    }
+  })}</div> <div class="grid grid-flow-col max-h-fit mt-8">${validate_component(Blockquote, "Blockquote").$$render($$result, { size: "xl" }, {}, {
+    default: () => {
+      return `${validate_component(Icon, "Icon").$$render(
+        $$result,
+        {
+          name: "quote-solid",
+          class: "w-10 h-10 text-gray-400 dark:text-gray-600"
+        },
+        {},
+        {}
+      )}
+     Explore documentation`;
+    }
+  })} <img class="m-auto"${add_attribute("src", robotImage, 0)} alt=""></div> <div class="grid grid-flow-col max-h-fit mt-8"><img class="m-auto"${add_attribute("src", robotImage, 0)} alt=""> ${validate_component(Blockquote, "Blockquote").$$render($$result, { size: "xl" }, {}, {
+    default: () => {
+      return `${validate_component(Icon, "Icon").$$render(
+        $$result,
+        {
+          name: "quote-solid",
+          class: "w-10 h-10 text-gray-400 dark:text-gray-600"
+        },
+        {},
+        {}
+      )}
+     Learn from hand-crafted tutorials`;
+    }
+  })}</div> ${validate_component(Accordion, "Accordion").$$render($$result, {}, {}, {
     default: () => {
       return `${validate_component(AccordionItem, "AccordionItem").$$render($$result, {}, {}, {
         header: () => {

@@ -1,4 +1,4 @@
-import { c as create_ssr_component, a as compute_rest_props, v as validate_component, h as add_attribute } from "./ssr.js";
+import { c as create_ssr_component, a as compute_rest_props, v as validate_component, j as add_attribute } from "./ssr.js";
 import { twMerge } from "tailwind-merge";
 import { F as Frame } from "./Frame.js";
 const Card = create_ssr_component(($$result, $$props, $$bindings, slots) => {

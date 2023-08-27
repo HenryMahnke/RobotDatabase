@@ -1,4 +1,4 @@
-import { c as create_ssr_component, i as validate_store, j as subscribe, f as escape } from "../../chunks/ssr.js";
+import { c as create_ssr_component, h as validate_store, i as subscribe, f as escape } from "../../chunks/ssr.js";
 import { p as page } from "../../chunks/stores.js";
 const Error = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let $page, $$unsubscribe_page;

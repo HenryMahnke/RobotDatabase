@@ -8,6 +8,19 @@ const config = {
   
 	theme: {
 	  extend: {
+		keyframes:{
+			wiggle:{
+				'0%,100%':{transform: 'rotate(-3deg)'},
+				'50%':{transform: 'rotate(3deg)'},
+			},
+			fadeIn:{
+				"0%": {opacity:0},
+				"100%": {opacity:1}
+			}
+		},
+		animation:{
+			fadeIn: 'fadeIn 2s ease-in forwards'
+		},
 		colors: {
 		  // flowbite-svelte
 		  primary: {

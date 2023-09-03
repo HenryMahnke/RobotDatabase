@@ -15,6 +15,10 @@
 	import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Input } from 'flowbite-svelte';
 </script>
 
+<Navbar>
+	<NavBrand>Team xxxx</NavBrand>
+	
+</Navbar>
 <div class="grid grid-cols-2 gap-0 lg:grid-cols-4">
 	<CardPlaceholder size="sm" class="mt-4 " /> 
 	<CardPlaceholder size="sm" class="mt-4 " />

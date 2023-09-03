@@ -2,6 +2,8 @@
 	import { CardPlaceholder } from 'flowbite-svelte';
 	import CardComponent from '../../components/CardComponent.svelte';
 	import { createEventDispatcher } from 'svelte';
+    import {Navbar,NavBrand, NavUl, NavLi, Button, Dropdown,DropdownItem,Search} from 'flowbite-svelte';
+	import { page } from '$app/stores';
 
 	let template = {
 		num: '254',
@@ -26,6 +28,9 @@
 	let component4 = CardComponent;
 	// need the value of the props to be held in database and passed in
 	let components = [];
+    $: activeUrl = $page.url.pathname;
+	let activeClass =
+		'text-green-700 dark:text-green-300 hover:text-green-900 dark:hover:text-green-500';
 
 	import { Pagination } from 'flowbite-svelte';
 	import { Icon } from 'flowbite-svelte-icons';
@@ -56,6 +61,57 @@
 <!-- {#each components as c}
 <svelte:component this={c}/>
 {/each} -->
+
+<Navbar>
+	<NavBrand>
+	</NavBrand>
+	<NavUl>
+		<Button
+			>Sort By<Icon
+				name="chevron-down-solid"
+				data-dropdown-toggle="dropdown"
+				class="w-3 h-3 ml-2 text-white dark:text-white"
+			/></Button
+		>
+		<Dropdown {activeUrl} {activeClass}>
+			<DropdownItem href="">Top Teams</DropdownItem>
+			<DropdownItem href="">Team Number</DropdownItem>
+		</Dropdown>
+		<Button
+			>Year<Icon
+				name="chevron-down-solid"
+				class="w-3 h-3 ml-2 text-white dark:text-white"
+			/></Button
+		>
+		<Dropdown {activeUrl} {activeClass}>
+			<DropdownItem href="">2023</DropdownItem>
+			<DropdownItem href="">2022</DropdownItem>
+			<DropdownItem href="">2021</DropdownItem>
+			<DropdownItem href="">2020</DropdownItem>
+			<DropdownItem href="">2019</DropdownItem>
+			<DropdownItem href="">2018</DropdownItem>
+		</Dropdown>
+		<div class="flex md:order-2">
+			<Button
+				color="none"
+				data-collapse-toggle="mobile-menu-3"
+				aria-controls="mobile-menu-3"
+				aria-expanded="false"
+				class="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-1"
+			>
+				<Icon name="search-outline" class="w-5 h-5" />
+			</Button>
+			<form class="flex gap-2">
+				<Search size="md" class="flex gap-2 items-center" placeholder="Search for a team" />
+				<Button size="sm">
+					<Icon name="search-outline" class="w-5 h-5 mr-2 -ml-1" />
+					Search
+				</Button>
+			</form>
+		</div>
+	</NavUl>
+</Navbar>
+
 <div class="grid md:grid-cols-4 grid-cols-2 align-middle justify-items-center gap-4">
 	{#each Array(12) as _, i}
 		<CardComponent

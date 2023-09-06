@@ -4,12 +4,10 @@
 	import { createEventDispatcher } from 'svelte';
     import {Navbar,NavBrand, NavUl, NavLi, Button, Dropdown,DropdownItem,Search} from 'flowbite-svelte';
 	import { page } from '$app/stores';
+	  /** @type {import('./$types').PageData} */
+	  export let data;
 
-	let template = {
-		num: '254',
-		name: 'poofs',
-		driveType: ' swerve'
-	};
+	let template = data;
 	let template1 = {
 		num: '93',
 		name: 'nac',

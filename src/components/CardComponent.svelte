@@ -1,6 +1,6 @@
 <script>
     import pineapple from '$lib/images/pineapple.jpg'
-    export let num = "254";
+    export let num = "9999";
     export let name = "poofs";
     export let driveType = "swerve";
 </script>

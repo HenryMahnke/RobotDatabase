@@ -1,7 +1,7 @@
 <script>
     import { AccordionItem, Accordion } from 'flowbite-svelte';
     import robotImage from '$lib/images/Runway 2023-08-20T04_42_08.389Z Image to Image To 2 color vector_svg type image.jpg'
-    import { Blockquote,P } from 'flowbite-svelte';
+    import { Blockquote,P,ImagePlaceholder } from 'flowbite-svelte';
     import { Icon } from 'flowbite-svelte-icons';
     import { Gallery } from 'flowbite-svelte';
     import robotImage2 from '$lib/images/Robot2.jpeg'
@@ -18,57 +18,39 @@
       { alt: 'erbology', src: robotImage1 },
       { alt: 'shoes', src: robotImage2 },
       { alt: 'small bag', src: robotImage3 },
-      { alt: 'shoe', src: robotImage6 }
 
     ];
     const images2 = [
       { alt: 'plants', src: robotImage4 },
-      { alt: 'watch', src: robotImage5 },
+      { alt: 'lamp', src: robotImage9 }
+
     ];
     const images3 = [
       { alt: 'cream', src: robotImage7 },
-      { alt: 'small bag', src: robotImage8 },
-      { alt: 'lamp', src: robotImage9 }
+      { alt: 'shoe', src: robotImage6 }
+
     ];
     const images4 = [
       { alt: 'toiletbag', src: robotImage10 },
       { alt: 'small bag', src: robotImage3 },
       { alt: 'bag', src: robotImage2 },
-      { alt: 'lamp', src: robotImage9 }
 
     ];
 </script>
 <div class="mb-10">
-  <Gallery class="gap-4 grid-cols-2 md:grid-cols-4">
-    <Gallery items={images1} />
-    <Gallery items={images2} />
-    <Gallery items={images3} />
-    <Gallery items={images4} />
+  <Gallery class="gap-1 grid-cols-2 md:grid-cols-4 h-">
+    <Gallery class ="" items={images1} />
+    <Gallery class ="" items={images3} />
+    <Gallery class ="" items={images4} />
+    <Gallery class ="" items={images2} />
   </Gallery>
+  
 </div>
-<div class="grid grid-flow-col max-h-fit">
-  <img class="m-auto" src="{robotImage}" alt="">
-  <Blockquote size="xl">
-    <Icon name="quote-solid" class="w-10 h-10 text-gray-400 dark:text-gray-600" />
-    Discover robots 
-  </Blockquote>
-</div>
-<div class="grid grid-flow-col max-h-fit mt-8">
-  <Blockquote size="xl">
-    <Icon name="quote-solid" class="w-10 h-10 text-gray-400 dark:text-gray-600" />
-     Explore documentation
-  </Blockquote>
-  <img class="m-auto" src="{robotImage}" alt="">
 
-</div>
-<div class="grid grid-flow-col max-h-fit mt-8">
-  <img class="m-auto" src="{robotImage}" alt="">
-  <Blockquote size="xl">
-    <Icon name="quote-solid" class="w-10 h-10 text-gray-400 dark:text-gray-600" />
-     Learn from hand-crafted tutorials
-  </Blockquote>
+<ImagePlaceholder class="py-4" />
+<ImagePlaceholder class="py-4" />
+<ImagePlaceholder class="py-4" />
 
-</div>
   
   <Accordion>
     <AccordionItem>

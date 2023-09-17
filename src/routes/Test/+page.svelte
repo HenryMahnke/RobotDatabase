@@ -6,8 +6,15 @@
 	import { page } from '$app/stores';
 	  /** @type {import('./$types').PageData} */
 	  export let data;
+	  console.log(data.data);
+	  console.log(data.data.length);
+	  console.log("SITE"+data.length);
 
-	let template = data;
+	let template = {
+		num: '93',
+		name: 'nac',
+		driveType: ' tank'
+	};
 	let template1 = {
 		num: '93',
 		name: 'nac',
@@ -26,13 +33,38 @@
 	let component4 = CardComponent;
 	// need the value of the props to be held in database and passed in
 	let components = [];
-    $: activeUrl = $page.url.pathname;
+    $: activeUrl = $page.url.searchParams.get('page');
+	console.log(activeUrl)
 	let activeClass =
 		'text-green-700 dark:text-green-300 hover:text-green-900 dark:hover:text-green-500';
 
 	import { Pagination } from 'flowbite-svelte';
 	import { Icon } from 'flowbite-svelte-icons';
 	let helper = { start: 1, end: 10, total: 100 };
+	let pages = [
+    { name: 6, href: '/Test?page=6' },
+    { name: 7, href: '/Test?page=7' },
+    { name: 8, href: '/Test?page=8' },
+    { name: 9, href: '/Test?page=9' },
+    { name: 10, href: '/Test?page=10' }
+  ];
+
+  $: {
+    pages.forEach((page) => {
+      let splitUrl = page.href.split('?');
+      let queryString = splitUrl.slice(1).join('?');
+	  console.log(queryString)
+      const hrefParams = new URLSearchParams(queryString);
+	  console.log(hrefParams)
+      let hrefValue = hrefParams.get('page');
+      if (hrefValue === activeUrl) {
+        page.active = true;
+      } else {
+        page.active = false;
+      }
+    });
+    pages = pages;
+  }
 
 	const previous = () => {
 		alert('Previous btn clicked. Make a call to your server to fetch data.');
@@ -111,11 +143,11 @@
 </Navbar>
 
 <div class="grid md:grid-cols-4 grid-cols-2 align-middle justify-items-center gap-4">
-	{#each Array(12) as _, i}
+	{#each Array(data.data.length) as _, i}
 		<CardComponent
-			num={templates[i % 3].num}
-			name={templates[i % 3].name}
-			driveType={templates[i % 3].driveType}
+			num={data.data[i]['Team Number']}
+			name={"Place holder"}
+			driveType={data.data[i]['Drivetrain Type']}
 		/>
 	{/each}
 </div>
